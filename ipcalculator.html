@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
+<script src="Js/angular.min.js"></script>
+<script src="jS/myJs.js"></script>
+<body>
+<div class="container">
+
+<div ng-app="myApp" ng-controller="myctr"  style="   position: absolute;margin-top: 40px;margin-left: -10px;">
+  <h1>IP CALCULATOR BY DONALD</h1>
+  <form name="myForm" class="form-horizontal" role="form">
+    <span class="label label-default">Ip: </span><input ng-model="ip" ng-change="changeip()" class="form-control" placeholder="Futni Ip">
+    <span class="label label-danger" ng-hide="shw">{{ErrorIp}}</span><br>
+    <span class="label label-default">NetMask :</span><input type="number" ng-model="netmask" class="form-control" placeholder="Futni netmask" ng-change="changesubnet()">
+    <span class="label label-danger" ng-hide="net">{{errorS}}</span><br>
+    <br>
+      <div ng-show="ok" >
+        <input type="button" value="Calculate" ng-click="afishim()" class="btn btn-default" >
+        <div ng-show="af">
+          <hr>
+            <span class="label label-info">Nr of Hosts:</span> {{hosts}} <br><br>
+            <span class="label label-info"> Class::</span>  {{clas}} <br><br>
+            <span class="label label-info">NetMask::</span>{{netm}}  <br><br>
+            <span class="label label-info">Adresa BroadCast:</span>{{broadcast}} <br><br>
+            <span class="label label-info">First Host:</span>{{firsthost}} <br><br>
+            <span class="label label-info">Last Host:</span>{{lasthost}}  <br><br>
+          <hr>
+        </div>
+  </form>
+</div>
+</div>
+</div>
+</body>
+</html>
